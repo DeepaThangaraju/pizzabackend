@@ -5,12 +5,13 @@ import {pizzaRouter} from "./routes/pizzaRoute.js";
 import {userRouter} from "./routes/userRoute.js";
 import {orderRouter} from "./routes/orderRoute.js";
 import { saveorderRouter } from "./routes/saveorderRoute.js";
-import dotenv from 'dotenv'
+import dotenv from 'dotenv';
+import cors from cors;
 
 connect();
 dotenv.config()
 const app=express();
-
+app.use(cors())
 app.use(express.json());
 
 const PORT=process.env.PORT;
